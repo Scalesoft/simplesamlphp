@@ -54,5 +54,10 @@
     "support": {
         "issues": "https://github.com/simplesamlphp/simplesamlphp/issues",
         "source": "https://github.com/simplesamlphp/simplesamlphp"
+    },
+   "extra": {
+        "branch-alias": {
+            "dev-master": "v1.16.x-dev"
+        }
     }
 }
