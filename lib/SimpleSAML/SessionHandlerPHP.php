@@ -343,13 +343,15 @@ class SessionHandlerPHP extends SessionHandler
             );
         }
 
-        session_set_cookie_params(
-            $cookieParams['lifetime'],
-            $cookieParams['path'],
-            $cookieParams['domain'],
-            $cookieParams['secure'],
-            $cookieParams['httponly']
-        );
+        if (session_status() !== PHP_SESSION_ACTIVE) {
+            session_set_cookie_params(
+                $cookieParams['lifetime'],
+                $cookieParams['path'],
+                $cookieParams['domain'],
+                $cookieParams['secure'],
+                $cookieParams['httponly']
+            );
+        }
 
         if (session_id() !== '') {
             // session already started, close it
